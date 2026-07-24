@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000/test/`.
 
 ## Production Node.js server
 
@@ -48,33 +48,36 @@ npm start
 ```
 
 `next build` writes the production application to `.next/`. `npm start` runs
-`server.cjs`, which serves the real Next.js application at `http://localhost:3000`.
+`server.cjs`, which serves the real Next.js application at `http://localhost:3000/test/`.
 The server reads `PORT` from the hosting environment automatically.
 
-## Deploy below `/Teams/`
+## Deployment path
 
-The current legacy portal is located below a `/Teams/` path. Build the project with that base path so generated asset and navigation URLs are correct:
+The application uses `/test` by default, so the domain root does not expose the
+site during testing. The production URL is `https://example.com/test/`.
+
+To use a different path, set `BASE_PATH` to the same value while building and
+running the server:
 
 macOS/Linux:
 
 ```bash
-BASE_PATH=/Teams npm run build
-BASE_PATH=/Teams npm start
+BASE_PATH=/another-path npm run build
+BASE_PATH=/another-path npm start
 ```
 
 Windows PowerShell:
 
 ```powershell
-$env:BASE_PATH="/Teams"
+$env:BASE_PATH="/another-path"
 npm run build
-$env:BASE_PATH="/Teams"
+$env:BASE_PATH="/another-path"
 npm start
 ```
 
 Set `server.cjs` as the Node.js application startup file in the hosting panel.
-Upload the project files, install production dependencies, run the build, and
-keep the same `BASE_PATH` value at build time and runtime. The application then
-uses routes such as `/Teams/crm/`.
+Upload the project files, install production dependencies, and run the build.
+When `BASE_PATH` is not set, the application uses `/test`.
 
 ## Where to connect application logic
 

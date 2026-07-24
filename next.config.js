@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const configuredBasePath = process.env.BASE_PATH?.trim() ?? ""
+const configuredBasePath =
+  process.env.BASE_PATH === undefined ? "/test" : process.env.BASE_PATH.trim()
 const normalizedBasePath = configuredBasePath.replace(/^\/+|\/+$/g, "")
 const basePath = normalizedBasePath ? `/${normalizedBasePath}` : ""
 
