@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^home1\.html$ ./ [R=301,L]
+  RewriteRule ^crm\.html$ crm/ [R=301,L]
+  RewriteRule ^accounting\.html$ accounting/ [R=301,L]
+  RewriteRule ^documents\.html$ documents/ [R=301,L]
+  RewriteRule ^services2\.html$ teams/real-estate/ [R=301,L]
+</IfModule>

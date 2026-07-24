@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.875rem;
+  --background: #f4f7fb;
+  --foreground: #17263d;
+  --card: #ffffff;
+  --card-foreground: #17263d;
+  --popover: #ffffff;
+  --popover-foreground: #17263d;
+  --primary: #0759ae;
+  --primary-foreground: #ffffff;
+  --secondary: #eaf3fb;
+  --secondary-foreground: #17436f;
+  --muted: #eef3f8;
+  --muted-foreground: #62738a;
+  --accent: #e7f8f7;
+  --accent-foreground: #087f82;
+  --destructive: #dc2626;
+  --border: #dce5ef;
+  --input: #dce5ef;
+  --ring: #0a9ca1;
+  --brand-blue: #0759ae;
+  --brand-blue-deep: #063f82;
+  --brand-teal: #0aa5a5;
+  --brand-teal-deep: #087f82;
+  --brand-ink: #17263d;
+  --brand-surface: #f4f7fb;
+}
+
+@theme inline {
+  --font-sans: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-deep: var(--brand-blue-deep);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-teal-deep: var(--brand-teal-deep);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-surface: var(--brand-surface);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .dashboard-grid {
+    background-image:
+      linear-gradient(to right, rgb(7 89 174 / 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(7 89 174 / 0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
