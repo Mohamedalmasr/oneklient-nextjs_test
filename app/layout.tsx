@@ -31,7 +31,11 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <div className="flex min-h-screen flex-col">
           <AppHeader />
-          <main className="dashboard-grid flex-1">{children}</main>
+          <main className="dashboard-grid flex-1">
+            <div className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+              {children}
+            </div>
+          </main>
           <SiteFooter />
         </div>
       </body>

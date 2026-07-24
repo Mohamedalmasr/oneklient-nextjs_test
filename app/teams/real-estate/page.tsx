@@ -48,7 +48,7 @@ export const metadata: Metadata = { title: "Real Estate Brokerage" }
 
 export default function RealEstateTeamPage() {
   return (
-    <div className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+    <>
       <PageHeading
         title="Real Estate Brokerage"
         eyebrow="Team workspace"
@@ -65,7 +65,7 @@ export default function RealEstateTeamPage() {
         <MetricCard label="Services" value="1 mapped" detail="Trade Report from the current portal." icon={FileText} tone="blue" />
       </section>
 
-      <section className="mt-10 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+      <section className="mt-10 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
         <Card>
           <CardHeader>
             <div className="mb-2"><Badge variant="teal"><Building2 /> Brokerage overview</Badge></div>
@@ -113,6 +113,6 @@ export default function RealEstateTeamPage() {
         </div>
         <ModuleWorkspace actions={brokerageActions} />
       </section>
-    </div>
+    </>
   )
 }

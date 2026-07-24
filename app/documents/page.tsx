@@ -33,7 +33,7 @@ export const metadata: Metadata = { title: "Documents" }
 
 export default function DocumentsPage() {
   return (
-    <div className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+    <>
       <PageHeading
         title="Documents"
         eyebrow="Document center"
@@ -47,7 +47,7 @@ export default function DocumentsPage() {
         }
       />
 
-      <div className="mt-8 grid gap-5 xl:grid-cols-[0.86fr_1.34fr]">
+      <div className="mt-8 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="space-y-5">
           <Card>
             <CardHeader>
@@ -190,6 +190,6 @@ export default function DocumentsPage() {
           </Card>
         </div>
       </div>
-    </div>
+    </>
   )
 }

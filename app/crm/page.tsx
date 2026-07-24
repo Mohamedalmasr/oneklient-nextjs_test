@@ -53,7 +53,7 @@ export const metadata: Metadata = { title: "CRM" }
 
 export default function CRMPage() {
   return (
-    <div className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+    <>
       <PageHeading
         title="CRM"
         eyebrow="Customer relationship management"
@@ -69,7 +69,7 @@ export default function CRMPage() {
         }
       />
 
-      <section id="dashboard" className="mt-8 grid gap-5 lg:grid-cols-[1.45fr_0.75fr]">
+      <section id="dashboard" className="mt-8 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
         <Card className="relative overflow-hidden border-brand-blue/15 bg-gradient-to-br from-white via-white to-secondary/55">
           <div aria-hidden="true" className="absolute top-0 right-0 size-48 translate-x-16 -translate-y-20 rounded-full bg-brand-blue/5" />
           <CardHeader className="relative">
@@ -151,6 +151,6 @@ export default function CRMPage() {
           </CardContent>
         </Card>
       </section>
-    </div>
+    </>
   )
 }
