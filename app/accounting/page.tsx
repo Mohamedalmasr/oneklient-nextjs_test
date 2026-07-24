@@ -46,7 +46,7 @@ export const metadata: Metadata = { title: "Accounting" }
 
 export default function AccountingPage() {
   return (
-    <div className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+    <>
       <PageHeading
         title="Accounting"
         eyebrow="Financial operations"
@@ -62,7 +62,7 @@ export default function AccountingPage() {
         <MetricCard label="Reporting" value="Ready" detail="Add charts after connecting real data." icon={ChartNoAxesCombined} tone="blue" />
       </section>
 
-      <section className="mt-10 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+      <section className="mt-10 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
         <Card>
           <CardHeader>
             <div className="mb-2 flex items-center gap-2">
@@ -118,6 +118,6 @@ export default function AccountingPage() {
         </div>
         <ModuleWorkspace actions={accountingActions} />
       </section>
-    </div>
+    </>
   )
 }

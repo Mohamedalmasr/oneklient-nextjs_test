@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import logo from "@/public/oneklient-logo.png"
+import logo from "@/public/logo.png"
 import { cn } from "@/lib/utils"
 
 type BrandProps = {
@@ -23,8 +23,8 @@ export function Brand({ className, compact = false }: BrandProps) {
         src={logo}
         alt="ONEklient Solutions Inc."
         priority
-        className={cn("h-auto w-[156px] object-contain", compact && "w-[132px]")}
-        sizes={compact ? "132px" : "156px"}
+        className={cn("h-auto w-[96px] object-contain", compact && "w-[80px]")}
+        sizes={compact ? "80px" : "96px"}
       />
     </Link>
   )

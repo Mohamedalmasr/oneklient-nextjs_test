@@ -21,7 +21,7 @@ type ModuleWorkspaceProps = {
 
 export function ModuleWorkspace({ actions }: ModuleWorkspaceProps) {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-5 md:grid-cols-2">
       {actions.map((action) => {
         const Icon = action.icon
 

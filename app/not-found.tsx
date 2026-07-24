@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card"
 
 export default function NotFound() {
   return (
-    <div className="mx-auto grid min-h-[70vh] w-full max-w-[1280px] place-items-center px-4 py-12 sm:px-6 lg:px-8">
+    <div className="grid min-h-[70vh] w-full place-items-center">
       <Card className="w-full max-w-lg items-center p-8 text-center sm:p-10">
         <span className="flex size-14 items-center justify-center rounded-2xl bg-secondary text-brand-blue">
           <FileQuestion className="size-6" />
