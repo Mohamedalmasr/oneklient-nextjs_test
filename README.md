@@ -2,11 +2,11 @@
 
 A responsive rebuild of the supplied ONEklient portal using:
 
-- Next.js 16 App Router and TypeScript
+- Next.js 14 App Router and TypeScript
 - Tailwind CSS v4
 - shadcn/ui-style components powered by Radix UI
 - Lucide icons
-- Static export support for an existing Apache/static-host deployment
+- Production Node.js server support
 
 The project preserves the source portal's main information architecture: Home, CRM, Accounting, Documents, and the Real Estate Brokerage team workspace. It also supplies polished starter screens for each route so backend services can be connected without redesigning the shell.
 
@@ -40,14 +40,16 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Production static export
+## Production Node.js server
 
 ```bash
 npm run build
 npm start
 ```
 
-`next build` writes the deployable site to `out/`. The included dependency-free static server exposes that folder at `http://localhost:3000` for local review.
+`next build` writes the production application to `.next/`. `npm start` runs
+`server.cjs`, which serves the real Next.js application at `http://localhost:3000`.
+The server reads `PORT` from the hosting environment automatically.
 
 ## Deploy below `/Teams/`
 
@@ -69,18 +71,10 @@ $env:BASE_PATH="/Teams"
 npm start
 ```
 
-Publish the contents of `out/` as the `/Teams/` directory on the web server. The rebuilt app uses clean routes such as `/Teams/crm/`. An Apache `.htaccess` file is included in `public/` so the static export redirects the current legacy `.html` paths to their replacement routes.
-
-Included Apache redirects:
-
-```apacheconf
-RewriteEngine On
-RewriteRule ^home1\.html$ ./ [R=301,L]
-RewriteRule ^crm\.html$ crm/ [R=301,L]
-RewriteRule ^accounting\.html$ accounting/ [R=301,L]
-RewriteRule ^documents\.html$ documents/ [R=301,L]
-RewriteRule ^services2\.html$ teams/real-estate/ [R=301,L]
-```
+Set `server.cjs` as the Node.js application startup file in the hosting panel.
+Upload the project files, install production dependencies, run the build, and
+keep the same `BASE_PATH` value at build time and runtime. The application then
+uses routes such as `/Teams/crm/`.
 
 ## Where to connect application logic
 
@@ -108,5 +102,5 @@ Reusable primitives are in `components/ui/`, while portal-specific components ar
 ## Notes
 
 - The app is intentionally backend-agnostic. Buttons and form surfaces that need APIs are clearly isolated for integration.
-- Static export is enabled in `next.config.ts`. Remove `output: "export"` when server actions, route handlers, or other server-only Next.js features are introduced.
+- Production requests are served by Next.js through `server.cjs`; the project no longer generates or serves an `out/` directory.
 - Replace `public/oneklient-logo.png` with your approved production logo asset when necessary.
