@@ -51,7 +51,7 @@ export default function HomePage() {
           <div>
             <p className="text-xs font-bold tracking-[0.16em] text-brand-teal-deep uppercase">Workspace</p>
             <h2 id="modules-heading" className="mt-1 text-2xl font-bold tracking-[-0.035em]">
-              Business modules
+              Core Modules
             </h2>
           </div>
           <p className="text-sm text-muted-foreground">Choose a workspace to continue.</p>
@@ -68,7 +68,7 @@ export default function HomePage() {
           <div>
             <p className="text-xs font-bold tracking-[0.16em] text-brand-teal-deep uppercase">Organization</p>
             <h2 id="teams-heading" className="mt-1 text-2xl font-bold tracking-[-0.035em]">
-              Teams
+              Industry Specific Environment
             </h2>
           </div>
           <p className="text-sm text-muted-foreground">Manage members &amp; roles</p>
@@ -80,20 +80,16 @@ export default function HomePage() {
               title="Real Estate Brokerage"
               description="Coordinate agents, active files, brokerage services, and transaction reporting."
               href="/teams/real-estate"
-              status="Active"
-              members={8}
               icon={Building2}
             />
             <TeamCard
               title="Project Management"
               description="Plan deliverables, owners, milestones, and approvals in a shared project workspace."
-              status="Coming soon"
               icon={FolderKanban}
             />
             <TeamCard
               title="Property Management"
               description="Organize properties, tenants, service requests, and operational documentation."
-              status="Coming soon"
               icon={Building2}
             />
           </div>
