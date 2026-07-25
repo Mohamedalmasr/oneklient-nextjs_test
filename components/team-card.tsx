@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { ArrowRight, BriefcaseBusiness, type LucideIcon, UsersRound } from "lucide-react"
+import { ArrowRight, BriefcaseBusiness, type LucideIcon } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
@@ -9,16 +8,12 @@ type TeamCardProps = {
   title: string
   description: string
   href?: string
-  status?: "Active" | "Coming soon"
-  members?: number
   icon?: LucideIcon
 }
 
 function TeamCardContent({
   title,
   description,
-  status = "Coming soon",
-  members,
   icon: Icon = BriefcaseBusiness,
   interactive,
 }: TeamCardProps & { interactive: boolean }) {
@@ -31,7 +26,7 @@ function TeamCardContent({
         !interactive && "bg-white/65 shadow-none",
       )}
     >
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-start">
         <span
           className={cn(
             "flex size-11 items-center justify-center rounded-xl",
@@ -40,12 +35,6 @@ function TeamCardContent({
         >
           <Icon className="size-5" strokeWidth={1.8} />
         </span>
-        <Badge
-          variant={status === "Active" ? "teal" : "outline"}
-          className={cn(status !== "Active" && "border-dashed bg-muted/40 text-muted-foreground")}
-        >
-          {status}
-        </Badge>
       </div>
 
       <div className="mt-7">
@@ -53,19 +42,11 @@ function TeamCardContent({
         <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
       </div>
 
-      <div className="mt-6 flex min-h-6 items-center justify-between text-xs font-semibold text-muted-foreground">
-        {typeof members === "number" ? (
-          <span className="inline-flex items-center gap-1.5">
-            <UsersRound className="size-3.5" />
-            {members} members
-          </span>
-        ) : (
-          <span>Workspace template</span>
-        )}
-        {interactive ? (
+      {interactive ? (
+        <div className="mt-6 flex min-h-6 items-center justify-end">
           <ArrowRight className="size-4 text-brand-blue transition-transform group-hover:translate-x-1" />
-        ) : null}
-      </div>
+        </div>
+      ) : null}
     </Card>
   )
 }
